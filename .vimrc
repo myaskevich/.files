@@ -1,21 +1,7 @@
 
-
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" Bubble single&multiple lines
-" nmap <D-S-k> ddkP
-" nmap <D-S-j> ddp
-" vmap <D-S-k> xkP`[V`]
-" vmap <D-S-j> xp`[V`]
-
-
-" Better copy & paste
-" When you want to paste large blocks of code into vim, press F2 before you
-" paste. At the bottom you should see ``-- INSERT (paste) --``.
-
-"" set pastetoggle=<F2>
-set clipboard=unnamed
 
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
@@ -42,6 +28,7 @@ set colorcolumn=80
 " highlight ColorColumn ctermbg=233
 let python_highlight_all=1
 
+
 " Useful settings
 set history=700
 set undolevels=700
@@ -55,13 +42,6 @@ set shiftround
 set expandtab
 
 
-" Make search case insensitive
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
 "" set nobackup
@@ -70,18 +50,14 @@ set noswapfile
 
 
 " Setup Pathogen to manage your plugins
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
 call pathogen#infect()
 call pathogen#helptags()
 
 
-" Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone https://github.com/kien/ctrlp.vim.git
-"" let g:ctrlp_max_height = 30
-set wildignore+=*.pyc
-"" set wildignore+=*_build/*
-"" set wildignore+=*/coverage/*
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" This is to make ViM not to jump to the next match when * is pressed
+" and remain on the current word
+nnoremap * *``
+
+
+" Vim clear last search highlighting
+nnoremap <esc> :noh<return><esc>
