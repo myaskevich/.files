@@ -13,10 +13,34 @@ set background=dark
 colorscheme base16-default
 
 
+" Font
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+set guifont=Meslo\ LG\ M\ for\ Powerline:h9
+
+
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
 filetype off
 filetype plugin indent on
+
+
+" Remove trailing whitespaces on buffer save
+" autocmd BufWritePre *.py :%s/\s\+$//e
+
+
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+" vnoremap < <gv  " better indentation
+" vnoremap > >gv  " better indentation
+
+
+" Unbind the arrow keys habit
+for prefix in ['i', 'n', 'v']
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
+endfor
 
 
 " Showing line numbers and length
@@ -61,3 +85,7 @@ nnoremap * *``
 
 " Vim clear last search highlighting
 nnoremap <esc> :noh<return><esc>
+
+
+" Highlight search matches
+set hlsearch
