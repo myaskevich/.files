@@ -31,8 +31,8 @@ filetype plugin indent on
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
-" vnoremap < <gv  " better indentation
-" vnoremap > >gv  " better indentation
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
 
 
 " Unbind the arrow keys habit
@@ -89,3 +89,6 @@ nnoremap <esc> :noh<return><esc>
 
 " Highlight search matches
 set hlsearch
+
+" make backspace behave like normal again
+set bs=2
