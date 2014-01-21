@@ -7,15 +7,15 @@ autocmd! bufwritepost .vimrc source %
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 " set t_Co=256
-"" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 syntax enable
 set background=dark
-colorscheme base16-default
+colorscheme solarized
 
 
 " Font
 " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
-set guifont=Meslo\ LG\ M\ for\ Powerline:h9
+set guifont=Meslo\ LG\ M\ for\ Powerline:h11
 
 
 " Enable syntax highlighting
@@ -92,3 +92,6 @@ set hlsearch
 
 " make backspace behave like normal again
 set bs=2
+
+" Remap :make command not to jump to the error file
+noremap <C-B> :make!<CR>

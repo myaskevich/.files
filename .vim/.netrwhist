@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/Maxim/.vim'
 let g:netrw_dirhist_2='/Users/Maxim/Dropbox/Kyriba'
 let g:netrw_dirhist_3='/Users/Maxim/Development/sandbox/gnu-make'
+let g:netrw_dirhist_4='/Users/Maxim/Projects/kyriba/fo/fo-acknowledgement'
+let g:netrw_dirhist_5='/Users/Maxim/Projects/github/turing/examples'
