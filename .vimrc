@@ -93,5 +93,22 @@ set hlsearch
 " make backspace behave like normal again
 set bs=2
 
+
 " Remap :make command not to jump to the error file
 noremap <C-B> :make!<CR>
+
+
+" Transparent copy paste
+vnoremap y "+y
+
+
+" Unicode support
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
