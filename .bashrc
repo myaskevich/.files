@@ -1,24 +1,39 @@
+# .bashrc
 
-# Autoload my ssh keys
-# for key in ~/.ssh/*.pub
-# do
-#     echo "Adding key ${key}"
-#     ssh-add "${key}"
-# done
+# User specific environment and startup programs
+
+# Java
+export JAVA_HOME=/usr/java/default
 
 # Gradle
-export GRADLE_HOME=/usr/local/opt/gradle-1.7
-
+export GRADLE_HOME=/usr/local/opt/gradle/current
 # Apache maven
-export M2_HOME=/usr/local/opt/apache-maven-3.1.0
-export M2=$M2_HOME/bin
+export M2_HOME=/usr/local/opt/apache-maven/current
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+# System path
+PATH=$PATH:$GRADLE_HOME/bin:$M2_HOME/bin
+
+export PATH
+
+
+
+
+######################################################
+# Aliases
+######################################################
+
+alias ll='ls -la'
+alias gradle+='gradle -Dpython=python2.5 -Dpython2.7=python'
+
+######################################################
+######################################################
+######################################################
 
 # Fix django ValueError: unknown locale: UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# System path
-PATH=$PATH:$GRADLE_HOME/bin:$M2
 
 # make dir and change dir in one step
 mkcd() { mkdir -p "$@" && cd $_; }
