@@ -1,21 +1,28 @@
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost _vimrc source %
 
 
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 " set t_Co=256
-let g:solarized_termcolors=256
 syntax enable
 set background=dark
-colorscheme solarized
+if has("win32")
+    colorscheme base16-default
+else
+    let g:solarized_termcolors=256
+    colorscheme solarized
+endif
 
 
 " Font
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
-set guifont=Meslo\ LG\ M\ for\ Powerline:h11
+if has("win32")
+    " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+    set guifont=Meslo\ LG\ M\ for\ Powerline:h9
+endif
 
 
 " Enable syntax highlighting
@@ -112,3 +119,11 @@ if has("multi_byte")
   "setglobal bomb
   set fileencodings=ucs-bom,utf-8,latin1
 endif
+
+
+" Remove trailing whitespaces on F2
+:nnoremap <silent> <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+
+" Cursor margin
+set so=15
