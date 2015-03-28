@@ -10,11 +10,10 @@ autocmd! bufwritepost _vimrc source %
 " set t_Co=256
 syntax enable
 set background=dark
+colorscheme glacier
 if has("win32")
-    colorscheme base16-default
 else
     let g:solarized_termcolors=256
-    colorscheme solarized
 endif
 
 
