@@ -21,6 +21,9 @@ endif
 if has("win32")
     " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
     set guifont=Meslo\ LG\ M\ for\ Powerline:h9
+else
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+    set guifont=Meslo\ LG\ M\ for\ Powerline\ 11
 endif
 
 
@@ -92,6 +95,8 @@ nnoremap * *``
 " Vim clear last search highlighting
 nnoremap <esc> :noh<return><esc>
 
+" The default setting of 'laststatus' is for the statusline to not appear until a split is created. If you want it to appear all the time, add the following to your vimrc
+set laststatus=2
 
 " Highlight search matches
 set hlsearch
